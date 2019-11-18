@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='/box-shadows.min.css'>
+
+        <link rel="stylesheet" href="/stylesheets/india.css">
+
+
+
+        
+    </head>
+
+
+    <body>
+
+            <header class = 'bShadow-17'>
+                    <h1>CRIME STATS - INDIA</h1>
+                    <P>Below are the Crime stats, Police stats and stats for crime against Children and Women.</P>
+            </header>
+
+            <div class='wrapper'>
+
+                <section id = 'crimeSection' class = "secHeight">
+                    <p class = 'sectionHeading'>CRIME STATS</p>
+
+                    <canvas id="myChart"></canvas>
+
+                    <label for="id-select">Choose a crime:</label>
+
+
+                        <select name= 'states' id='state-select'>
+                                <option value="Rape">Rape</option>
+        
+                                <option value="Murder">Murder</option>
+                                <option value="Theft">Theft</option>
+                                <option value="Cheating">Cheating</option>
+                                <option value="Pooping">Pooping</option>
+
+                        </select>
+
+                        <canvas id="myChart2"></canvas>
+
+                </section>
+
+                <section id = 'policeSection'>
+                    <p class = 'sectionHeading'>POLICE STATS</p>
+
+                    <canvas id="myChart3" class='policeCharts'></canvas>
+
+                    <canvas id="myChart4" class='policeCharts'></canvas>
+
+                    <canvas id="myChart5" class='policeCharts'></canvas>
+
+                        
+                </section> 
+
+
+                <section class = "secHeight">
+                        <p class = 'sectionHeading'>CRIME AGAINST CHILDREN - STATS</p>
+
+                    <canvas id="myChart6"></canvas>
+
+                    <label for="id-select">Choose a crime:</label>
+
+
+                        <select name= 'states' id='state-select'>
+                                <option value="Rape">Rape</option>
+        
+                                <option value="Murder">Murder</option>
+                                <option value="Theft">Theft</option>
+                                <option value="Cheating">Cheating</option>
+                                <option value="Pooping">Pooping</option>
+
+                        </select>
+
+                        <canvas id="myChart7"></canvas>
+                </section>
+
+
+                <section class = "secHeight">
+                        <p class = 'sectionHeading'>CRIME AGAINST WOMEN - STATS</p>
+
+                        <canvas id="myChart8"></canvas>
+
+                    <label for="id-select">Choose a crime:</label>
+
+
+                        <select name= 'states' id='state-select'>
+                                <option value="Rape">Rape</option>
+        
+                                <option value="Murder">Murder</option>
+                                <option value="Theft">Theft</option>
+                                <option value="Cheating">Cheating</option>
+                                <option value="Pooping">Pooping</option>
+
+                        </select>
+
+                        <canvas id="myChart9"></canvas>
+                    </section>
+
+            </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+        <script src="/scripts/logic.js"></script>
+        </body>
+
+    </html>

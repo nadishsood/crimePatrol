@@ -1,0 +1,144 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+body{
+	font-family: 'Muli', sans-serif;
+}
+
+header{
+	height: 150px;
+	border: 2px solid black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+header h1{
+	font-size: 50px;
+	font-weight: bold;
+
+}
+
+header p{
+	font-size: 25px;
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-evenly;
+    border: 2px solid black;
+    min-height: 2500px;
+}
+
+body section {
+    height: 1200px;
+    width: 40%;
+    border: 2px solid black;
+}
+
+.wrapper section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.wrapper canvas{
+    width: 95%;
+    height: 50%;
+}
+
+section label{
+    position: relative;
+    top: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.sectionHeading{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* #policeSection canvas{
+    height: 300px;
+    width: 500px
+} */
+
+.policeCharts{
+
+    height: 300px !important;
+    width: 500px !important;
+
+}
+
+.secHeight{
+    height: 1000px;
+}
+
+body{
+    padding: 0px 150px 0px 150px;
+}
