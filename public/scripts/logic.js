@@ -1,5 +1,20 @@
 $(document).ready(function(){
 
+    let goToIndia = function(){
+        // location.href = "/india/c1/c2/c3";
+
+        alert('hi');
+
+    }
+    let goToState = function(){
+        location.href = "/state/c1/c2/c3";
+
+    }
+    let goToRankings = function(){
+        location.href = "/rankings/yr/ca/cr";
+
+    }
+
 
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {

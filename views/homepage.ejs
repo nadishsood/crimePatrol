@@ -9,27 +9,23 @@
 
         <link rel="stylesheet" href="/stylesheets/main.css">
         <link rel='stylesheet' href="/stylesheets/bs.css">
-
-
-
-
-        
     </head>
 
 
     <body>
+
+        
         <div id = 'wrapper'>
 
-
-            <header class = 'bShadow bShadow-1'>
+            <header>
                 <h1>CRIME PATROL</h1>
-                <p>View crime stats for <span>India</span>, for a <span>particular state</span>  in India or view crime rankings for all states.</p>
+                <p>View crime stats for <span>India</span>, for a particular<span> state</span>  in India or view <span>rankings</span> for all states. </p>
             </header>
 
             <section id = 'select'>
-                    <button type="button" class="btn btn-dark"><a href="/india/c1/c2/c3">India</a></button>
-                    <button type="button" class="btn btn-dark"><a href="/state/c1/c2/c3">State</a></button>
-                    <button type="button" class="btn btn-dark"><a href="/rankings/yr/ca/cr">Rankings</a></button>
+                    <a href="/india/c1/c2/c3" class="btn btn-light bShadow-8" role="button"><span>INDIA</span></a>
+                    <a href="/state/c1/c2/c3" class="btn btn-light bShadow-8" role="button"><span>STATE</span></a>
+                    <a href="/rankings/yr/ca/cr" class="btn btn-light bShadow-8" role="button"><span>RANKINGS</span></a>
 
             </section>
 
@@ -84,11 +80,219 @@
 
                 
                     </select>
+                    
+                    <!--  -->
+
+                    <img src="/images/indianmap.jpeg" id="india-image" >
+
+                    <div id="anchors">
+                            <div><a id ="jk" href="#">JK</a></div>
+                            
+                            <div><a id ="hp" href="#">HP</a></div>
+                            <div><a id ="pb" href="#">PB</a></div>
+
+                            <div><a id ="uk" href="#">UK</a></div>
+                            <div><a id ="rj" href="#">RJ</a></div>
+                            <div><a id ="mp" href="#">MP</a></div>
+                            <div><a id ="up" href="#">UP</a></div>
+                            <div><a id ="gj" href="#">GJ</a></div>
+                            <div><a id ="br" href="#">BR</a></div>
+                            <div><a id ="ct" href="#">CT</a></div>
+                            <div><a id ="jh" href="#">JH</a></div>
+                            <div><a id ="or" href="#">OR</a></div>
+                            <div><a id ="mh" href="#">MH</a></div>
+                            <div><a id ="ap" href="#">AP</a></div>
+                            <div><a id ="ka" href="#">KA</a></div>
+                            <div><a id ="kl" href="#">KL</a></div>
+                            <div><a id ="tn" href="#">TN</a></div>
+                            <div><a id ="wb" href="#">WB</a></div>
+                            <div><a id ="ga" href="#">GA</a></div>
+                            <div><a id ="sk" href="#">SK</a></div>
+                            <div><a id ="ml" href="#">ML</a></div>
+                            <div><a id ="tr" href="#">TR</a></div>
+                            <div><a id ="as" href="#">AS</a></div>
+                            <div><a id ="ar" href="#">AR</a></div>
+                            <div><a id ="mn" href="#">MN</a></div>
+                            <div><a id ="nl" href="#">NL</a></div>
+                            <div><a id ="mz" href="#">MZ</a></div>
+                        
+                    </div>
+
+                    
 
                 
 
 
-                <img src="/images/india.jpg" alt="">
+                    <!-- <img src="/images/indianmap.jpeg" id="image"  usemap="#image-map" class="map center"> -->
+                    <!-- <map name="image-map" class="map">
+                        <area target="" alt="kerela" title="kerela" href="" coords="406,1241,334,1176,435,1408,455,1356,448,1313" shape="poly">
+                        <area target="" alt="tamil nadu" title="tamil nadu" href="" coords="580,1266,604,1160,404,1242,449,1424,576,1354" shape="poly">
+                        <area target="" alt="KARANATAKA" title="KARANATAKA" href="" coords="402,1226,351,1181,305,1068,360,972,424,948,472,904,476,1005,430,1088,518,1167,445,1230" shape="poly">
+                    
+                        
+                    
+                        <area target="" alt="andhra pradesh" title="andhra pradesh" href="" coords="528,836,
+                    504,862,
+                    486,909,
+                    474,946,
+                    474,974,
+                    469,993,
+                    469,1026,
+                    453,1033,
+                    448,1073,
+                    439,1105,
+                    467,1115,
+                    448,1136,
+                    488,1133,
+                    518,1157,
+                    511,1185,
+                    577,1164,
+                    551,1173,
+                    603,1150,
+                    603,1119,
+                    598,1091,
+                    598,1058,
+                    626,1033,
+                    659,1012,
+                    682,1007,
+                    703,993,
+                    712,970,
+                    741,944,
+                    759,928,
+                    783,921,
+                    799,900,
+                    818,876,
+                    790,885,
+                    766,878,
+                    741,895,
+                    724,911,
+                    687,932,
+                    654,935,
+                    638,921,
+                    628,909,
+                    612,897,
+                    598,885,
+                    593,869,
+                    591,855,
+                    565,855,
+                    544,846" shape="poly">
+                    
+                    <area target="" alt="maharashtra" title="maharasthra" href="" coords="612,885
+                    591,860,
+                    565,848,
+                    523,836,
+                    497,874,
+                    472,911,
+                    434,937,
+                    397,956,
+                    355,981,
+                    327,998,
+                    299,1035,
+                    278,1007,
+                    273,956,
+                    261,900,
+                    261,876,
+                    257,839,
+                    252,815,
+                    296,792,
+                    315,764,
+                    317,750,
+                    329,736,
+                    331,715,
+                    362,743,
+                    390,745,
+                    420,752,
+                    453,750,
+                    479,741,
+                    497,750,
+                    540,743,
+                    575,745,
+                    600,750,
+                    621,757,
+                    621,776,
+                    628,801,
+                    631,829,
+                    642,862,
+                    624,862
+                    " shape="poly">
+                    
+                    <area target="" alt="madhya pradesh" title="madhya pradesh" href="" coords="430,762
+                    388,745,
+                    348,715,
+                    336,703,
+                    341,680,
+                    357,654,
+                    374,631,
+                    376,593,
+                    388,570,
+                    413,589,
+                    406,624,
+                    462,600,
+                    448,547,
+                    528,490,
+                    537,556,
+                    544,614,
+                    598,579,
+                    687,584,
+                    677,642,
+                    654,710,
+                    631,750,
+                    535,745,
+                    483,736,
+                    603,750,
+                    579,741" shape="poly">
+                    
+                    <area target="" alt="rajasthan" title="rajashthan" href="" coords="352,666
+                    308,624,
+                    266,584,
+                    196,572,
+                    184,525,
+                    168,488,
+                    142,465,
+                    161,434,
+                    182,418,
+                    238,418,
+                    278,376,
+                    320,343,
+                    360,324,
+                    397,371,
+                    425,413,
+                    437,432,
+                    467,420,
+                    493,467,
+                    472,511,
+                    481,572,
+                    458,605,
+                    411,628,
+                    388,577" shape="poly">
+                    
+                    
+                    <area target="" alt="J&amp;K" title="J&amp;K" href="" coords="370,166,375,93,442,106,524,64,544,101,554,141,577,204,452,157,409,203,399,200,383,190,393,199,379,181" shape="poly">
+                    <area target="" alt="Punjab" title="Punjab" href="" coords="380,262,349,311,403,332,456,317,460,271,418,214,384,237" shape="poly">
+                    <area target="" alt="Dehradun" title="Dehradun" href="" coords="564,268,529,280,518,272,513,330,569,371,603,389,621,311,634,317,611,301,595,295" shape="poly">
+                    <area target="" alt="Haryana" title="Haryana" href="" coords="372,337,441,413,483,426,474,313,482,312,431,341,407,340" shape="poly">
+                    <area target="" alt="Uttar Pradesh" title="Uttar Pradesh" href="" coords="568,554,742,604,781,490,598,402,539,371,529,361,529,366,499,340,485,361,506,431" shape="poly">
+                    <area target="" alt="Bihar" title="Bihar" href="" coords="772,563,805,477,949,523,911,584,770,587" shape="poly">
+                    <area target="" alt="Chattisgarh" title="Chattisgarh" href="" coords="716,650,631,766,651,927,780,679" shape="poly">
+                    <area target="" alt="Orrisa" title="Orrisa" href="" coords="674,927,746,773,784,717,925,732,860,836" shape="poly">
+                    <area target="" alt="West Bengal" title="West Bengal" href="" coords="879,666,969,603,1003,734,935,715" shape="poly">
+                    <area target="" alt="Jharkand" title="Jharkand" href="" coords="763,608,801,708,854,708,945,587,806,621" shape="poly">
+                    <area target="" alt="Sikkim" title="Sikkim" href="" coords="986,428,957,465" shape="rect">
+                    <area target="" alt="Meghalaya" title="Meghalaya" href="" coords="1047,549,1058,526,1146,523,1172,549,1072,563" shape="poly">
+                    <area target="" alt="Manipur" title="Manipur" href="" coords="1192,596,1206,543,1255,539,1240,616" shape="poly">
+                    <area target="" alt="Arunachal Pradesh" title="Arunachal Pradesh" href="" coords="1131,441,1236,350,1306,345,1354,424,1284,394,1202,456" shape="poly">
+                    <area target="" alt="Assam" title="Assam" href="" coords="1035,495,1301,422,1207,510,1160,602,1180,511,1047,523" shape="poly">
+                    <area target="" alt="Tripura" title="Tripura" href="" coords="1132,669,1109,615,1151,604" shape="poly">
+                    <area target="" alt="Nagaland" title="Nagaland" href="" coords="1212,536,1237,489,1275,462,1271,518" shape="poly">
+                    <area target="" alt="Himachal pradesh" title="Himachal pradesh" href="" coords="436,234,459,267,498,302,577,228,470,175,435,198" shape="poly">
+                    <area target="" alt="Gujarat" title="Gujarat" href="" coords="72,606,232,579,338,670,291,779,156,762,103,683" shape="poly">
+                    <area target="" alt="Mizoram" title="Mizoram" href="" coords="1178,593,1161,633,1185,711,1224,642,1197,613" shape="poly">
+                    <area target="" alt="Goa" title="Goa" href="" coords="288,1031,304,1073,316,1040" shape="poly">
+                    
+                    
+                    
+                       
+                    </map> -->
             </section>
 
     </div>
