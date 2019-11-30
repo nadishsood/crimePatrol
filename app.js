@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 var request = require('request');
 
 
+const port = process.env.PORT ||  3000;
+
+
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -287,6 +290,6 @@ app.get('/rankings/:yr/:ca/:cr', (req, res)=>{
 
 })
 
-app.listen(3000, ()=>{ 
+app.listen(port, ()=>{ 
     console.log('Server has started on port 3000!');
 });
