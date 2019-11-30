@@ -24,99 +24,104 @@
 
             <section id = 'select'>
                     <a href="/india/c1/c2/c3" class="btn btn-light bShadow-8" role="button"><span>INDIA</span></a>
-                    <a href="/state/c1/c2/c3" class="btn btn-light bShadow-8" role="button"><span>STATE</span></a>
+                    <a href="#" class="btn btn-light bShadow-8" role="button" id= "stateButton"><span>STATE</span></a>
                     <a href="/rankings/yr/ca/cr" class="btn btn-light bShadow-8" role="button"><span>RANKINGS</span></a>
 
             </section>
 
-            <section id = "stateChoose">
+            <section id = "stateChoose" class="opaquer">
                 <!-- <input type="text" class="form-control" placeholder="Search for State" aria-label="Username" aria-describedby="basic-addon1"> -->
                 
                 
                 <label for="id-select">Choose a state:</label>
+                <form method="POST" action = '/state/s/c1/c2/c3'>
 
-                <select class= 'stateSelect' name= 'states' id='state-select'>
-                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <select class= 'stateSelect' name= 'states' id='states'>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+        
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+        
+        
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+        
+        
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+        
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Puducherry">Puducherry</option>
+        
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="West Bengal">West Bengal</option>
+                           
+        
+                        
+                            </select>
 
-                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                        <option value="Assam">Assam</option>
-                        <option value="Bihar">Bihar</option>
-                        <option value="Chandigarh">Chandigarh</option>
-
-
-                        <option value="Chhattisgarh">Chhattisgarh</option>
-                        <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-                        <option value="Daman and Diu">Daman and Diu</option>
-                        <option value="Delhi">Delhi</option>
-
-
-                        <option value="Goa">Goa</option>
-                        <option value="Gujarat">Gujarat</option>
-                        <option value="Haryana">Haryana</option>
-                        <option value="Himachal Pradesh">Himachal Pradesh</option>
-                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                        <option value="Jharkhand">Jharkhand</option>
-                        <option value="Karnataka">Karnataka</option>
-                        <option value="Kerala">Kerala</option>
-                        <option value="Lakshadweep">Lakshadweep</option>
-
-                        <option value="Madhya Pradesh">Madhya Pradesh</option>
-                        <option value="Maharashtra">Maharashtra</option>
-                        <option value="Manipur">Manipur</option>
-                        <option value="Meghalaya">Meghalaya</option>
-                        <option value="Mizoram">Mizoram</option>
-                        <option value="Nagaland">Nagaland</option>
-                        <option value="Odisha">Odisha</option>
-                        <option value="Puducherry">Puducherry</option>
-
-                        <option value="Punjab">Punjab</option>
-                        <option value="Rajasthan">Rajasthan</option>
-                        <option value="Sikkim">Sikkim</option>
-                        <option value="Tamil Nadu">Tamil Nadu</option>
-                        <option value="Telangana">Telangana</option>
-                        <option value="Tripura">Tripura</option>
-                        <option value="Uttarakhand">Uttarakhand</option>
-                        <option value="Uttar Pradesh">Uttar Pradesh</option>
-                        <option value="West Bengal">West Bengal</option>
-                   
-
+                            <input type='submit'name ='register'>
+                </form>
                 
-                    </select>
                     
                     <!--  -->
 
                     <img src="/images/indianmap.jpeg" id="india-image" >
 
                     <div id="anchors">
-                            <div><a id ="jk" href="#">JK</a></div>
+                            <div><a id ="jk" href="/state/JAMMU AND KASHMIR/c1/c2/c3">JK</a></div>
                             
-                            <div><a id ="hp" href="#">HP</a></div>
-                            <div><a id ="pb" href="#">PB</a></div>
+                            <div><a id ="hp" href="/state/HIMACHAL%20PRADESH/c1/c2/c3">HP</a></div>
+                            <div><a id ="pb" href="/state/PUNJAB/c1/c2/c3">PB</a></div>
 
-                            <div><a id ="uk" href="#">UK</a></div>
-                            <div><a id ="rj" href="#">RJ</a></div>
-                            <div><a id ="mp" href="#">MP</a></div>
-                            <div><a id ="up" href="#">UP</a></div>
-                            <div><a id ="gj" href="#">GJ</a></div>
-                            <div><a id ="br" href="#">BR</a></div>
-                            <div><a id ="ct" href="#">CT</a></div>
-                            <div><a id ="jh" href="#">JH</a></div>
-                            <div><a id ="or" href="#">OR</a></div>
-                            <div><a id ="mh" href="#">MH</a></div>
-                            <div><a id ="ap" href="#">AP</a></div>
-                            <div><a id ="ka" href="#">KA</a></div>
-                            <div><a id ="kl" href="#">KL</a></div>
-                            <div><a id ="tn" href="#">TN</a></div>
-                            <div><a id ="wb" href="#">WB</a></div>
-                            <div><a id ="ga" href="#">GA</a></div>
-                            <div><a id ="sk" href="#">SK</a></div>
-                            <div><a id ="ml" href="#">ML</a></div>
-                            <div><a id ="tr" href="#">TR</a></div>
-                            <div><a id ="as" href="#">AS</a></div>
-                            <div><a id ="ar" href="#">AR</a></div>
-                            <div><a id ="mn" href="#">MN</a></div>
-                            <div><a id ="nl" href="#">NL</a></div>
-                            <div><a id ="mz" href="#">MZ</a></div>
+                            <div><a id ="uk" href="/state/UTTRAKHAND/c1/c2/c3">UK</a></div>
+                            <div><a id ="rj" href="/state/RAJASTHAN/c1/c2/c3">RJ</a></div>
+                            <div><a id ="mp" href="/state/MADHYAPRADESH/c1/c2/c3">MP</a></div>
+                            <div><a id ="up" href="/state/UTTARPRADESH/c1/c2/c3">UP</a></div>
+                            <div><a id ="gj" href="/state/GUJARAT/c1/c2/c3">GJ</a></div>
+                            <div><a id ="br" href="/state/BIHAR/c1/c2/c3">BR</a></div>
+                            <div><a id ="ct" href="/state/CHATTISGARH/c1/c2/c3">CT</a></div>
+                            <div><a id ="jh" href="/state/JHARKAND/c1/c2/c3">JH</a></div>
+                            <div><a id ="or" href="/state/ORRISA/c1/c2/c3">OR</a></div>
+                            <div><a id ="mh" href="/state/MAHARASHTRA/c1/c2/c3">MH</a></div>
+                            <div><a id ="ap" href="/state/ANDHRAPRADESH/c1/c2/c3">AP</a></div>
+                            <div><a id ="ka" href="/state/KARNATAKA/c1/c2/c3">KA</a></div>
+                            <div><a id ="kl" href="/state/KERELA/c1/c2/c3">KL</a></div>
+                            <div><a id ="tn" href="/state/TAMILNADU/c1/c2/c3">TN</a></div>
+                            <div><a id ="wb" href="/state/WESTBENGAL/c1/c2/c3">WB</a></div>
+                            <div><a id ="ga" href="/state/GOA/c1/c2/c3">GA</a></div>
+                            <div><a id ="sk" href="/state/SIKKIM/c1/c2/c3">SK</a></div>
+                            <div><a id ="ml" href="/state/MEGHALAYA/c1/c2/c3">ML</a></div>
+                            <div><a id ="tr" href="/state/TRIPURA/c1/c2/c3">TR</a></div>
+                            <div><a id ="as" href="/state/ASSAM/c1/c2/c3">AS</a></div>
+                            <div><a id ="ar" href="/state/ARUNACHALPRADESH/c1/c2/c3">AR</a></div>
+                            <div><a id ="mn" href="/state/MANIPUR/c1/c2/c3">MN</a></div>
+                            <div><a id ="nl" href="/state/NAGALAND/c1/c2/c3">NL</a></div>
+                            <div><a id ="mz" href="/state/MIZORAM/c1/c2/c3">MZ</a></div>
                         
                     </div>
 
@@ -153,7 +158,10 @@
 
                 $.ajax({
                     url: url,
-                });
+                    data: data,
+                    success: success,
+                    dataType: dataType
+            });
 
 
                 
@@ -161,6 +169,12 @@
                 
             })
             
+        });
+
+
+        $("#stateButton").click((e)=>{
+            e.preventDefault();
+            $("#stateChoose").toggleClass("opaquer");
         });
         
         </script>

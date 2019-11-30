@@ -350,4 +350,6 @@ img.center {
 	font-weight: bold !important;
 }
 
-
+.opaquer{
+	opacity: 0.2;
+}
