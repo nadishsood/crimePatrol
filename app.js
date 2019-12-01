@@ -210,8 +210,8 @@ app.use('/state/:stateName/:c1/:c2/:c3', (req, res)=>{
     arrWomenCrime.push(item.noCrime);
   });
   
-  console.log(arrWomenYears);
-  console.log(arrWomenCrime);
+  // console.log(arrWomenYears);
+  // console.log(arrWomenCrime);
 
   // CHILDREN //
   let crimeChildren = result.cacpy;
@@ -225,10 +225,20 @@ app.use('/state/:stateName/:c1/:c2/:c3', (req, res)=>{
     arrChildCrime.push(item.noCrime);
   });
 
-  // console.log(arrChildCrime);
+  console.log(arrChildCrime);
+  console.log(arrChildYears);
+
+
+  // request(`http://localhost:8080/map/${state}/${crimeName}`, function (error, response, body) {  
+
+  
 
 
 
+  // });
+
+
+  
   // RENDER THE PAGE //
   res.render('state', {state, arrWomenYears, arrWomenCrime, arrChildYears, arrChildCrime, arrTotalCrimeYears, arrTotalCrimeNo, arrPoliceSthYears, appPoliceSthNo, arrPoliceIYears, arrPoliceINo });
 

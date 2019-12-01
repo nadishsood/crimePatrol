@@ -31,16 +31,18 @@
 
                     <label for="id-select">Choose a crime:</label>
 
+                    <!-- <form method="POST" action = '/state/s/c1/c2/c3'> -->
 
                         <select name= 'states' id='state-select'>
-                                <option value="Rape">Rape</option>
         
-                                <option value="Murder">Murder</option>
-                                <option value="Theft">Theft</option>
-                                <option value="Cheating">Cheating</option>
-                `                <option value="Pooping">Pooping</option>
+                                <option value="Murder">MURDER</option>
+                                <option value="Theft">THEFT</option>
+                                <option value="Cheating">RAPE</option>
+                `                <option value="Riots">RIOTS</option>
 
                         </select>
+
+                    <!-- </form> -->
 
                         <canvas id="myChart2"></canvas>
 
@@ -66,16 +68,18 @@
 
                     <label for="id-select">Choose a crime:</label>
 
+                    <form method="POST" action = '/state/s/c1/c2/c3'>
 
                         <select name= 'states' id='state-select'>
-                                <option value="Rape">Rape</option>
         
-                                <option value="Murder">Murder</option>
-                                <option value="Theft">Theft</option>
-                                <option value="Cheating">Cheating</option>
-                                <option value="Pooping">Pooping</option>
+                                <option value="MURDER">MURDER</option>
+                                <option value="THEFT">THEFT</option>
+                                <option value="RAPE">RAPE</option>
+                                <option value="RIOTS">RIOTS</option>
 
                         </select>
+
+                    </form>
 
                         <canvas id="myChart7"></canvas>
                 </section>
@@ -88,16 +92,18 @@
 
                     <label for="id-select">Choose a crime:</label>
 
+                    <form method="POST" action = '/state/s/c1/c2/c3'>
 
                         <select name= 'states' id='state-select'>
-                                <option value="Rape">Rape</option>
         
-                                <option value="Murder">Murder</option>
-                                <option value="Theft">Theft</option>
-                                <option value="Cheating">Cheating</option>
-                                <option value="Pooping">Pooping</option>
+                                <option value="MURDER">MURDER</option>
+                                <option value="THEFT">THEFT</option>
+                                <option value="RAPE">RAPE</option>
+                                <option value="RIOTS">RIOTS</option>
 
                         </select>
+
+                        </form>
 
                         <canvas id="myChart9"></canvas>
                     </section>
@@ -158,25 +164,25 @@
     }); 
 
 
-    // var ctx = document.getElementById('myChart2').getContext('2d');
-    // var chart = new Chart(ctx, {
-    //     // The type of chart we want to create
-    //     type: 'line',
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
     
-    //     // The data for our dataset
-    //     data: {
-    //         labels: ['2001', '2002', '2003', '2004', '2005', '2006', '2007',  '2008',  '2009',  '2010',  '2011'],
-    //         datasets: [{
-    //             label: 'Total Crimes Commited',
-    //             // backgroundColor: 'rgb(255, 99, 132)',
-    //             borderColor: 'rgb(255, 99, 132)',
-    //             data: [0, 10, 5, 2, 20, 30, 45, 3, 44, 155, 3 ]
-    //         }]
-    //     },
+        // The data for our dataset
+        data: {
+            labels: ['2001', '2002', '2003', '2004', '2005', '2006', '2007',  '2008',  '2009',  '2010',  '2011'],
+            datasets: [{
+                label: 'Total Crimes Commited',
+                // backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45, 3, 44, 155, 3 ]
+            }]
+        },
     
-    //     // Configuration options go here
-    //     options: {}
-    // }); 
+        // Configuration options go here
+        options: {}
+    }); 
 
 
     var ctx = document.getElementById('myChart3').getContext('2d');
