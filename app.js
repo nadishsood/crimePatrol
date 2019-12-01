@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 var request = require('request');
+var axios = require('axios');
 
 
 const port = process.env.PORT ||  3000;
@@ -26,17 +27,17 @@ app.get('/india/:c1/:c2/:c3', (req, res)=>{
       res.send(error);
     }else{
        
-    let result = JSON.parse(body);
+    var result = JSON.parse(body);
 
     console.log(result);
 
 
     // TOTAL CRIMES //
-    let totalCrime = result.crimePerYear;
+    var totalCrime = result.crimePerYear;
     totalCrime.sort((a, b)=> (a.year > b.year) ? 1 : -1);
   
-    let arrTotalCrimeYears = [];
-    let arrTotalCrimeNo = [];
+    var arrTotalCrimeYears = [];
+    var arrTotalCrimeNo = [];
   
     totalCrime.forEach((item)=>{
       arrTotalCrimeYears.push(item.year);
@@ -48,13 +49,13 @@ app.get('/india/:c1/:c2/:c3', (req, res)=>{
     // POLICE //  
     //police strength
   
-    let policeStrengthData = result.pspy;
+    var policeStrengthData = result.pspy;
   
   
     policeStrengthData.sort((a, b) => (a.year > b.year) ? 1 : -1);
   
-    let arrPoliceSthYears = [];
-    let appPoliceSthNo = [];
+    var arrPoliceSthYears = [];
+    var appPoliceSthNo = [];
   
     policeStrengthData.forEach((item)=>{
       arrPoliceSthYears.push(item.year);
@@ -63,11 +64,11 @@ app.get('/india/:c1/:c2/:c3', (req, res)=>{
   
     //police injuries and deaths
   
-      let pInjuriesData = result.pidpy;
+      var pInjuriesData = result.pidpy;
       pInjuriesData.sort((a, b) => (a.year > b.year) ? 1 : -1);
   
-      let arrPoliceIYears = [];
-      let arrPoliceINo = [];
+      var arrPoliceIYears = [];
+      var arrPoliceINo = [];
   
       pInjuriesData.forEach((item)=>{
         arrPoliceIYears.push(item.year);
@@ -79,12 +80,12 @@ app.get('/india/:c1/:c2/:c3', (req, res)=>{
   
   
       /// WOMEN //
-    let crimeWomen = result.cawpy;
+    var crimeWomen = result.cawpy;
     crimeWomen.sort((a, b) => (a.year > b.year) ? 1 : -1);
   
     
-    let arrWomenYears = [];
-    let arrWomenCrime = [];
+    var arrWomenYears = [];
+    var arrWomenCrime = [];
     
     crimeWomen.forEach((item)=>{
       arrWomenYears.push(item.year);
@@ -95,11 +96,11 @@ app.get('/india/:c1/:c2/:c3', (req, res)=>{
     console.log(arrWomenCrime);
   
     // CHILDREN //
-    let crimeChildren = result.cacpy;
+    var crimeChildren = result.cacpy;
     crimeChildren.sort((a, b) => (a.year > b.year) ? 1 : -1);
     
-    let arrChildYears = [];
-    let arrChildCrime = [];
+    var arrChildYears = [];
+    var arrChildCrime = [];
     
     crimeChildren.forEach((item)=>{
       arrChildYears.push(item.year);
@@ -119,139 +120,340 @@ app.get('/india/:c1/:c2/:c3', (req, res)=>{
   });
 });
 
-app.use('/state/:stateName/:c1/:c2/:c3', (req, res)=>{ 
+// var state;
+// var crimeName;
+
+// app.use('/state/:stateName/:c1/:c2/:c3', (req, res)=>{ 
 
 
-  // console.log(req.body);
-  // console.log(req.params);
-
-  // if(req.body.states){
-  // let state = req.body.states.toUpperCase();
-  // }
-  let state;
-  console.log(req.params.stateName);
-  if(req.params.stateName == 's'){
-    state = req.body.states.toUpperCase();
-  }else{
-    state = req.params.stateName;
-  }
-
-  console.log(state);
+//   var arrWomenYears = [];
+//   var arrWomenCrime = [];
 
 
-
-  request(`http://localhost:8080/map/${state}`, function (error, response, body) {
-
-
-  let result = JSON.parse(body);
-
-  //stateName
-
-  let state = (result.name).toUpperCase();
+//   var arrTotalCrimeYears = [];
+//   var arrTotalCrimeNo = [];
 
 
-  // TOTAL CRIMES //
-  let totalStateCrime = result.crimePerYear;
-  totalStateCrime.sort((a, b)=> (a.year > b.year) ? 1 : -1);
-
-  let arrTotalCrimeYears = [];
-  let arrTotalCrimeNo = [];
-
-  totalStateCrime.forEach((item)=>{
-    arrTotalCrimeYears.push(item.year);
-    arrTotalCrimeNo.push(item.noCrime);
-  });
+//   var arrPoliceSthYears = [];
+//   var appPoliceSthNo = [];
 
 
-
-  // POLICE //  
-  //police strength
-
-  let policeStrengthData = result.pspy;
+//   var arrPoliceIYears = [];
+//   var arrPoliceINo = [];
 
 
-  policeStrengthData.sort((a, b) => (a.year > b.year) ? 1 : -1);
+//   var arrChildYears = [];
+//   var arrChildCrime = [];
 
-  let arrPoliceSthYears = [];
-  let appPoliceSthNo = [];
+//   var crimeDataYears = [];
+//   var crimeDataData = [];
 
-  policeStrengthData.forEach((item)=>{
-    arrPoliceSthYears.push(item.year);
-    appPoliceSthNo.push(item.noCrime);
-  });
 
-  //police injuries and deaths
+//   // console.log(req.body);
+//   // console.log(req.params);
 
-    let pInjuriesData = result.pidpy;
-    pInjuriesData.sort((a, b) => (a.year > b.year) ? 1 : -1);
+//   // if(req.body.states){
+//   // var state = req.body.states.toUpperCase();
+//   // }
+//   // console.log(req.body);
+//   // console.log(req.params.stateName);
+//   // if(req.params.stateName == 's'){
+//   //   state = req.body.states.toUpperCase();
+//   // }else{
+//   //   state = req.params.stateName;
+//   // }
 
-    let arrPoliceIYears = [];
-    let arrPoliceINo = [];
 
-    pInjuriesData.forEach((item)=>{
-      arrPoliceIYears.push(item.year);
-      arrPoliceINo.push(item.noCrime);
-    });
+//   //if state undefined && req.body.states -> state = req.body.states
+//   // else -> {
+//     // crime = get crime from body
+//   // }
+
+
+//   if(req.body.states){
+//     state = req.body.states.toUpperCase();
+//   }else{
+//     crimeName = req.body.crimeName.toUpperCase();
+//   }
+
+
+
+//   request(`http://localhost:8080/map/${state}`, function (error, response, body) {
+
+
+
+//   var result = JSON.parse(body);
+//   console.log("body1", body);
+
+//   //stateName
+
+//   var state = (result.name).toUpperCase();
+
+
+//   // TOTAL CRIMES //
+//   var totalStateCrime = result.crimePerYear;
+//   totalStateCrime.sort((a, b)=> (a.year > b.year) ? 1 : -1);
+
+
+
+//   totalStateCrime.forEach((item)=>{
+//     arrTotalCrimeYears.push(item.year);
+//     arrTotalCrimeNo.push(item.noCrime);
+//   });
+
+
+
+//   // POLICE //  
+//   //police strength
+
+//   var policeStrengthData = result.pspy;
+
+
+//   policeStrengthData.sort((a, b) => (a.year > b.year) ? 1 : -1);
+
+ 
+
+//   policeStrengthData.forEach((item)=>{
+//     arrPoliceSthYears.push(item.year);
+//     appPoliceSthNo.push(item.noCrime);
+//   });
+
+//   //police injuries and deaths
+
+//     var pInjuriesData = result.pidpy;
+//     pInjuriesData.sort((a, b) => (a.year > b.year) ? 1 : -1);
+
+   
+
+//     pInjuriesData.forEach((item)=>{
+//       arrPoliceIYears.push(item.year);
+//       arrPoliceINo.push(item.noCrime);
+//     });
   
   
     
 
 
-    /// WOMEN //
-  let crimeWomen = result.cawpy;
-  crimeWomen.sort((a, b) => (a.year > b.year) ? 1 : -1);
+//     /// WOMEN //
+//   var crimeWomen = result.cawpy;
+//   crimeWomen.sort((a, b) => (a.year > b.year) ? 1 : -1);
 
   
-  let arrWomenYears = [];
-  let arrWomenCrime = [];
+ 
   
-  crimeWomen.forEach((item)=>{
-    arrWomenYears.push(item.year);
-    arrWomenCrime.push(item.noCrime);
-  });
+//   crimeWomen.forEach((item)=>{
+//     arrWomenYears.push(item.year);
+//     arrWomenCrime.push(item.noCrime);
+//   });
   
-  // console.log(arrWomenYears);
-  // console.log(arrWomenCrime);
+//   // console.log(arrWomenYears);
+//   // console.log(arrWomenCrime);
 
-  // CHILDREN //
-  let crimeChildren = result.cacpy;
-  crimeChildren.sort((a, b) => (a.year > b.year) ? 1 : -1);
+//   // CHILDREN //
+//   var crimeChildren = result.cacpy;
+//   crimeChildren.sort((a, b) => (a.year > b.year) ? 1 : -1);
   
-  let arrChildYears = [];
-  let arrChildCrime = [];
+ 
   
-  crimeChildren.forEach((item)=>{
-    arrChildYears.push(item.year);
-    arrChildCrime.push(item.noCrime);
-  });
+//   crimeChildren.forEach((item)=>{
+//     arrChildYears.push(item.year);
+//     arrChildCrime.push(item.noCrime);
+//   });
+//   console.log(arrChildCrime);
+ 
 
-  console.log(arrChildCrime);
-  console.log(arrChildYears);
+//   request(`http://localhost:8080/map/${state}/${crimeName}`, function (error, response, body) { 
+    
+//   console.log(crimeName);
 
+//     var crimeData = JSON.parse(body);
 
-  // request(`http://localhost:8080/map/${state}/${crimeName}`, function (error, response, body) {  
-
+//     console.log(crimeData);
   
-
-
-
-  // });
-
-
   
-  // RENDER THE PAGE //
-  res.render('state', {state, arrWomenYears, arrWomenCrime, arrChildYears, arrChildCrime, arrTotalCrimeYears, arrTotalCrimeNo, arrPoliceSthYears, appPoliceSthNo, arrPoliceIYears, arrPoliceINo });
-
   
- });
+//     crimeData.sort((a,b) => (a.year>b.year) ? 1 : -1 );
+  
+  
+  
+//     // crimeData.forEach((item)=>{
+//     //   crimeDataYears.push(item.year);
+//     //   crimeDataData.push(item.noCrime);
+      
+//     // });
+
+//     crimeDataYears = crimeData;
+//     console.log(crimeDataData);
+//     // console.log("crimeName", crimeName);
+//     //   console.log(crimeDataYears);
+//     //   console.log(crimeDataData);
+
+//     res.render('state', {crimeDataYears, crimeDataData, state, arrWomenYears, arrWomenCrime, arrChildYears, arrChildCrime, arrTotalCrimeYears, arrTotalCrimeNo, arrPoliceSthYears, appPoliceSthNo, arrPoliceIYears, arrPoliceINo });
+
+    
+  
+//   });
+
+//   // RENDER THE PAGE //
+
+// });
+
+
+
+
+
+
+
+
+
+// });
+
+var state;
+var crimeName;
+
+app.use('/state/:stateName/:c1/:c2/:c3', (req, res)=>{
+
+  var arrWomenYears = [];
+  var arrWomenCrime = [];
+
+
+  var arrTotalCrimeYears = [];
+  var arrTotalCrimeNo = [];
+
+
+  var arrPoliceSthYears = [];
+  var appPoliceSthNo = [];
+
+
+  var arrPoliceIYears = [];
+  var arrPoliceINo = [];
+
+
+  var arrChildYears = [];
+  var arrChildCrime = [];
+
+  var crimeDataYears = [];
+  var crimeDataData = [];
+
+      if(req.body.states){
+        state = req.body.states.toUpperCase();
+      }else{
+        crimeName = req.body.crimeName.toUpperCase();
+      }
+
+      console.log('hi');
+      console.log(state);
+      console.log(crimeName);
+
+      // const promise1 = axios.get("http://localhost:8080/map/${state}");
+      // const promise2 = axios.get("http://localhost:8080/map/${state}/${crimeName}");
+
+      // Promise.all([promise1, promise2]).then(function(values) {
+      //   // console.log(values);
+        
+
+
+      // });
+
+      axios.get(`http://localhost:8080/map/${state}`).then((result)=>{
+
+      
+        console.log("body1", result.data);
+        //stateName
+        
+          var state = (result.data.name).toUpperCase();
+        
+          // TOTAL CRIMES //
+          var totalStateCrime = result.data.crimePerYear;
+          totalStateCrime.sort((a, b)=> (a.year > b.year) ? 1 : -1);
+        
+         totalStateCrime.forEach((item)=>{
+            arrTotalCrimeYears.push(item.year);
+            arrTotalCrimeNo.push(item.noCrime);
+          });
+          
+        // POLICE //  
+          //police strength
+        
+          var policeStrengthData = result.data.pspy;
+        
+        
+          policeStrengthData.sort((a, b) => (a.year > b.year) ? 1 : -1);
+        
+         policeStrengthData.forEach((item)=>{
+            arrPoliceSthYears.push(item.year);
+            appPoliceSthNo.push(item.noCrime);
+          });
+        
+          //police injuries and deaths
+        
+            var pInjuriesData = result.data.pidpy;
+            pInjuriesData.sort((a, b) => (a.year > b.year) ? 1 : -1);
+        
+            pInjuriesData.forEach((item)=>{
+              arrPoliceIYears.push(item.year);
+              arrPoliceINo.push(item.noCrime);
+            });
+          
+          
+        /// WOMEN //
+          var crimeWomen = result.data.cawpy;
+          crimeWomen.sort((a, b) => (a.year > b.year) ? 1 : -1);
+        
+        crimeWomen.forEach((item)=>{
+            arrWomenYears.push(item.year);
+            arrWomenCrime.push(item.noCrime);
+          });
+          
+          // console.log(arrWomenYears);
+          // console.log(arrWomenCrime);
+        
+          // CHILDREN //
+          var crimeChildren = result.data.cacpy;
+          crimeChildren.sort((a, b) => (a.year > b.year) ? 1 : -1);
+          
+         
+        crimeChildren.forEach((item)=>{
+            arrChildYears.push(item.year);
+            arrChildCrime.push(item.noCrime);
+          });
+
+
+    axios.get(`http://localhost:8080/map/${state}/${crimeName}`).then((result)=>{
+
+          console.log(crimeName);
+
+          var crimeData = (result.data);
+      
+          console.log(crimeData);
+        
+        
+        
+          crimeData.sort((a,b) => (a.year>b.year) ? 1 : -1 );
+        
+        
+        
+          crimeData.forEach((item)=>{
+            crimeDataYears.push(item.year);
+            crimeDataData.push(item.noCrime);
+            
+          });
+
+          res.render('state', {crimeName, crimeDataYears,crimeDataData, state, arrWomenYears, arrWomenCrime, arrChildYears, arrChildCrime, arrTotalCrimeYears, arrTotalCrimeNo, arrPoliceSthYears, appPoliceSthNo, arrPoliceIYears, arrPoliceINo });
+    
+    })
+    //   res.render('state', {arrWomenYears, arrWomenCrime, arrChildYears, arrChildCrime });
+ }).catch((e)=>{
+      console.log(e);
+    });
 
 
 });
 
 // app.get('/state/:stateName/:c1/:c2/:c3', (req, res)=>{ 
     
-//     let result = req.params;
-//     let stateName = req.params.stateName;
+//     var result = req.params;
+//     var stateName = req.params.stateName;
 //     // console.log(stateName);
 
 //     request(`http://localhost:8080/map/${stateName}`, function (error, response, body) {
@@ -259,13 +461,13 @@ app.use('/state/:stateName/:c1/:c2/:c3', (req, res)=>{
 // //   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
 // //   console.log('body:', body); // Print the HTML for the Google homepage.
 
-//   let result = JSON.parse(body);
-//   let crimeWomen = result.cawpy;
+//   var result = JSON.parse(body);
+//   var crimeWomen = result.cawpy;
 //   crimeWomen.sort((a, b) => (a.year > b.year) ? 1 : -1);
 
   
-//   let arrWomenYears = [];
-//   let arrWomenCrime = [];
+//   var arrWomenYears = [];
+//   var arrWomenCrime = [];
   
 //   crimeWomen.forEach((item)=>{
 //     arrWomenYears.push(item.year);
@@ -275,11 +477,11 @@ app.use('/state/:stateName/:c1/:c2/:c3', (req, res)=>{
 //   // console.log(arrWomenYears);
 //   // console.log(arrWomenCrime);
   
-//   let crimeChildren = result.cacpy;
+//   var crimeChildren = result.cacpy;
 //   crimeChildren.sort((a, b) => (a.year > b.year) ? 1 : -1);
   
-//   let arrChildYears = [];
-//   let arrChildCrime = [];
+//   var arrChildYears = [];
+//   var arrChildCrime = [];
   
 //   crimeChildren.forEach((item)=>{
 //     arrChildYears.push(item.year);
