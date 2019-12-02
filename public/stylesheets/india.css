@@ -89,7 +89,7 @@ header p{
     justify-content: space-around;
     align-content: space-evenly;
     /* border: 2px solid black; */
-    min-height: 2500px;
+    min-height: 2300px;
 }
 
 body section {
@@ -130,6 +130,10 @@ section label{
     width: 500px
 } */
 
+#policeSection{
+    height: 1000px;
+}
+
 .policeCharts{
 
     height: 300px !important;
@@ -152,3 +156,20 @@ header span{
 #state-select{
     margin-top: 20px;
 }
+
+#childSec{
+    height: 500px;
+}
+
+#womenSec{
+    height: 500px;
+}
+
+.wrapper{
+    min-height: 1800px;
+}
+
+.wrapper section{
+    width: 45%;
+}
+
