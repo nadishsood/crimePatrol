@@ -1,0 +1,261 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+body{
+	font-family: 'Muli', sans-serif;
+}
+
+header{
+	height: 150px;
+	/* border: 2px solid black; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+header h1{
+	font-size: 50px;
+	font-weight: bold;
+
+}
+
+header p{
+	font-size: 25px;
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-evenly;
+    /* border: 2px solid black; */
+    min-height: 2300px;
+}
+
+body section {
+    height: 1200px;
+    width: 40%;
+    /* border: 2px solid black; */
+    
+}
+
+.wrapper section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 10px; */
+    border-radius: 25px;
+}
+
+.wrapper canvas{
+    width: 95%;
+    height: 50%;
+}
+
+section label{
+    position: relative;
+    top: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.sectionHeading{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* #policeSection canvas{
+    height: 300px;
+    width: 500px
+} */
+
+#policeSection{
+    height: 1000px;
+}
+
+.policeCharts{
+
+    height: 300px !important;
+    width: 500px !important;
+
+}
+
+.secHeight{
+    height: 1000px;
+}
+
+body{
+    padding: 0px 150px 0px 150px;
+}
+
+header span{
+    color: #E53836
+}
+
+#state-select{
+    margin-top: 20px;
+}
+
+#childSec{
+    height: 500px;
+}
+
+#womenSec{
+    height: 500px;
+}
+
+.wrapper{
+    min-height: 1800px;
+}
+
+.wrapper section{
+    width: 100%;
+}
+body{
+    background: black;
+    color:white;
+}
+
+#table-container{
+    display: flex;
+    
+}
+#table-container table{
+    width: 45%;
+}
+#crimeSection{
+    height: 1800px;
+}
+body{
+    padding: 0 50px 0 50px;
+}
+
+#crimeSection{
+    height: 1200px;
+}
+.tab{
+    padding: 2px !important;
+}
+.tab td{
+    height: 3px;
+}
+#query1heading{
+    position: relative;
+
+}
+
+#policeSection{
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-evenly;
+}
+
+#childSec{
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-evenly;
+}
+
+#womenSec{
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-evenly;
+}
+
+#newSec{
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-evenly;
+}
+
+#query1Heading{
+    position: relative;
+    top: 100px;
+    color: #26FF01;
+}
+
+th{
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #C02E1C;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 20px 5px;
+    align: center;
+}
+table td{
+    margin: 0 50px;
+}
+
+#query1Heading{
+    font-size: 25px;
+    margin-bottom: 30px;
+
+}
+
+.sectionHeading{
+    font-size: 25px;
+    font-weight: bold;
+    color:#26FF01;
+}

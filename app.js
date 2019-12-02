@@ -148,7 +148,7 @@ app.use('/india/:c1/:c2/:c3', (req, res)=>{
       
     });
 
-    
+
 
     res.render('india', {crimeNameIndia, crimeDataYearsIndia
       ,crimeDataDataIndia, state, arrWomenYears, arrWomenCrime, 
@@ -191,8 +191,12 @@ app.use('/state/:stateName/:c1/:c2/:c3', (req, res)=>{
       if(req.body.states){
         state = req.body.states.toUpperCase();
       }else{
+
         crimeName = req.body.crimeName.toUpperCase();
       }
+
+      
+
 
       console.log('hi');
       console.log(state);
@@ -306,10 +310,53 @@ app.use('/state/:stateName/:c1/:c2/:c3', (req, res)=>{
 
 
 
-app.get('/rankings/:yr/:ca/:cr', (req, res)=>{ 
-    res.render('rankings');
+app.get('/trends', (req, res)=>{ 
+
+  axios.get('http://localhost:8080/complex').then((result)=>{
+
+    // console.log(result.data);
+
+    let query1 = result.data.jp;
+    
+    query1.sort((a,b) => (a.year>b.year) ? 1 : -1);
+
+    let query11= query1.slice(0, query1.length/2);
+    let query22 = query1.slice(query1.length/2);
+    
+
+    let query2 = result.data.cgList;
+
+    let query3 = result.data.dc;
+
+    let query4 = result.data.ps;
+
+    let query5 = result.data.tpp10;
+
+    console.log(query5);
+
+    res.render('trends', {query11, query22, query2, query3, query4, query5});
+
+
+
+    // "name": "GUJARAT",
+    //         "crimes": 163628,
+    //         "casualties": 515,
+    //         "retirement"
+
+  
+
+
+  })
+
+
 
 })
+
+
+// app.use('/state/:sName', (req, res)=>{
+
+// });
+
 
 app.listen(port, ()=>{ 
     console.log('Server has started on port 3000!');

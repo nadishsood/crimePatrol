@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='/stylesheets/bs.css'>
+
+        <link rel="stylesheet" href="/stylesheets/trends.css">
+
+
+
+        
+    </head>
+
+
+    <body>
+
+            <header>
+                    <h1>TRENDS FROM CRIME DATA</h1>
+                    <!-- <P>Below are the <span>Crime stats</span>, <span>Police stats</span> and stats for crime <span>against Children</span> and <span>Women.</span></P> -->
+                   
+            
+                </header>
+
+            <div class='wrapper'>
+
+                <p id ='query1Heading'>States in which crimes commited by juveniles was more than 10 percent of total crime for that state year-wise.</p>
+
+                <section id = 'crimeSection' class = "secHeight bShadow-8">
+                        <section id="table-container">
+                                <table class="tab"> 
+                                        <tr>
+                                                <th>YEAR</th>
+                                                <th>STATE</th>
+                                                <th>PERCENT OF CRIME</th>
+                  
+                                        </tr>
+                  
+                                        <% query11.forEach(function(item){ %>
+                                                <tr>
+                                                  <td><%=item.year%></td>
+                                                  <td><%=item.name%></td>
+                                                  <td><%=item.percent%></td>
+                  
+                  
+                                                </tr>
+                  
+                                                <% }); %>
+                  
+                                      </table>
+
+                                      <table class="tab">
+                                        <tr>
+                                                <th>YEAR</th>
+                                                <th>STATE</th>
+                                                <th> PERCENT OF CRIME </th>
+                  
+                                        </tr>
+                  
+                                        <% query22.forEach(function(item){ %>
+                                                <tr>
+                                                  <td><%=item.year%></td>
+                                                  <td><%=item.name%></td>
+                                                  <td><%=item.percent%></td>
+                  
+                  
+                                                </tr>
+                  
+                                                <% }); %>
+                  
+                                      </table>
+                                
+                        </section>
+                    
+                    
+
+                </section>
+
+                <section id = 'policeSection' class="bShadow-8">
+                    <p class = 'sectionHeading'>Crime Group with highest arrests per year. </p>
+
+                    <table class="tab">
+                        <tr>
+                                <th>YEAR</th>
+                                <th>CRIME</th>
+  
+                        </tr>
+  
+                        <% query2.forEach(function(item){ %>
+                                <tr>
+                                  <td><%=item.year%></td>
+                                  <td><%=item.group%></td>
+  
+  
+                                </tr>
+  
+                                <% }); %>
+  
+                      </table>
+                   
+
+                        
+                </section> 
+
+
+                <section class = "secHeight bShadow-8" id = "childSec">
+                        <p class = 'sectionHeading'>Top 10 States with decrease in crimes from first half of 2001-2010 to the second half of same time period.</p>
+                        <table class="tab">
+                                <tr>
+                                        <th>STATE</th>
+                                        <th>PERCENT DECREASE</th>
+          
+                                </tr>
+          
+                                <% query3.forEach(function(item){ %>
+                                        <tr>
+                                          <td><%=item.name%></td>
+                                          <td><%=item.percentDecrease%></td>
+          
+          
+                                        </tr>
+          
+                                        <% }); %>
+          
+                              </table>
+                   
+                </section>
+
+
+                <section class = "secHeight bShadow-8" id="womenSec">
+                        <p class = 'sectionHeading'>States which need re-enforcement, that are in the top 10 lists of crime rate, police casualties and police close to retirement.</p>
+
+                        <table class="tab">
+                                <tr>
+                                        <th>STATE</th>
+                                        <th>CRIMES</th>
+                                        <th>POLICE CASUALTIES</th>
+                                        <th>POLICE RETIREMENT</th>
+
+          
+                                </tr>
+          
+                                <% query4.forEach(function(item){ %>
+                                        <tr>
+                                          <td><%=item.name%></td>
+                                          <td><%=item.crimes%></td>
+                                          <td><%=item.casualties%></td>
+                                          <td><%=item.retirement%></td>
+
+                                          
+          
+          
+                                        </tr>
+          
+                                        <% }); %>
+          
+                              </table>
+
+                        
+                    </section>
+
+                    <section class = "secHeight bShadow-8" id="newSec">
+                        <p class = 'sectionHeading'> Top 10 states contributing to most crime.
+                        </p>
+
+                        <table class="tab">
+                                <tr>
+                                        <th>STATE</th>
+                                        
+
+          
+                                </tr>
+          
+                                <% query5.forEach(function(item){ %>
+                                        <tr>
+                                          <td><%=item%></td>
+                                        </tr>
+          
+                                        <% }); %>
+          
+                              </table>
+
+                        
+                    </section>
+                    
+
+            </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+        <!-- <script src="/scripts/logic.js"></script> -->
+
+        
+        </body>
+
+    </html>
