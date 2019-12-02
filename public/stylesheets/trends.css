@@ -191,7 +191,7 @@ body{
 }
 
 #crimeSection{
-    height: 1200px;
+    height: 1000px;
 }
 .tab{
     padding: 2px !important;
@@ -258,4 +258,8 @@ table td{
     font-size: 25px;
     font-weight: bold;
     color:#26FF01;
+}
+
+header a{
+    color: white;
 }

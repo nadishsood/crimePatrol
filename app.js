@@ -320,6 +320,19 @@ app.get('/trends', (req, res)=>{
     
     query1.sort((a,b) => (a.year>b.year) ? 1 : -1);
 
+    // query1.forEach((item, index)=>{
+    //   // item.percent = MATH.round(item.percent);
+    //   console.log(itme.percent);
+    // });
+
+    // query1.forEach((item, index)=>{
+    //   if(item.percent > 37){
+    //     query1.splice(index, 1);
+    //   }
+    // });
+
+    query1 = query1.filter((item)=> item.percent < 37);
+
     let query11= query1.slice(0, query1.length/2);
     let query22 = query1.slice(query1.length/2);
     

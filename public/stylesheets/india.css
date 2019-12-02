@@ -173,3 +173,20 @@ header span{
     width: 45%;
 }
 
+body{
+    background: black;
+    color: white;
+}
+
+.wrapper section{
+    border: 3px solid grey;
+}
+
+.sectionHeading{
+    font-size: 27px;
+    color: #26FF01;
+}
+
+header a{
+    color: white;
+}
